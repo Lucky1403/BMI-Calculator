@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResultofBMI</title>
+    <style>
+        #Result{
+            width: 90vw;
+            height: 80vh;
+            border: 4px solid black;
+            border-radius: 2%;
+            justify-content: center;
+            margin: auto;
+        }
+
+        #Heading{
+            text-align: center;
+            text-decoration: underline;
+            color: black;
+            font-family: cursive;
+            font-size: 35px;
+            color: red;
+        }
+
+        .Res{
+            font-family: 'Times New Roman';
+            font-size: 25px;
+            margin-left: 25px;
+        }
+
+        #Retest{
+            width: 220px;
+            height: 40px;
+            background-color: red;
+            color:white;
+            text-decoration: none;
+            display: block;
+            font-size: 30px;
+            border-radius: 10%;
+        }
+
+        ul{
+            font-size: 25px;
+            font-family: 'Times New Roman';
+            margin-left: 20px;
+            font-size: 25px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="Result">
+        <h2 id="Heading">BMI Result</h2>
+        <p class="Res"><u><b>BMI</b></u> : {{ bmi }}</p>
+        <p class="Res"><u><b>Category</b></u> : {{ category }}</p>
+        <p class="Res"><u><b>Description</b></u> : {{description}}</p>
+        <p class="Res" id="Stips"><u><b>Tips</b></u> : <ul>
+            {% for tip in generated_tips %}
+                <li>{{ tip }}</li>
+            {% endfor %}
+        </ul></p>
+    </div>
+    <br><br><br>
+    <center>
+        <a href="/" id="Retest">Calculate Again</a>
+    </center>
+    
+</body>
+</html>
