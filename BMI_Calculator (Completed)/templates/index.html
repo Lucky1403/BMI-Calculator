@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: cursive;
+        }
+
+        #Part2{
+            display: flex;
+        }
+
+        .Labels {
+            font-size: 50px;
+            color: red;
+        }
+
+        #Text1 {
+            margin-top: 25px;
+        }
+
+        #Text2 {
+            margin-top: 70px;
+        }
+
+        #Text3 {
+            margin-top: 70px;
+        }
+
+        .Forms{
+            display: flex;
+            margin-left: 100px;
+        }
+
+        #MainBox {
+            align-items: center;
+        }
+
+        #Part1 {
+            text-align: center;
+            font-size: 50px;
+            background-color: red;
+            color: white;
+        }
+
+        #Title:hover{
+            border: 10px solid black;
+            color: black;
+        }
+
+        #part4{
+            display: block;
+            text-align: center;
+        }
+
+        #Calculate {
+            background-color: red;
+            color: white;
+            border-radius: 15%;
+            height: 60px;
+            width: 120px;
+            font-size: 25px;
+        }
+
+        .Arrows {
+            font-size: 75px;
+            margin-top: 0px;
+        }
+
+        #Part3 {
+        display: flex;
+        justify-content: space-around;
+        }
+
+        .input-container label, .input-container input {
+            margin-bottom: 10px;
+        }
+
+        #EmptyDiv{
+            height: 50px;
+        }
+
+        .input-image {
+            width: auto; 
+            height: 400px;
+            display: flex;
+        }
+
+        #Input1{
+            height: 40px;
+            font-size: 30px;
+            width: 300px;
+            color: blue;
+            border: none;
+        }
+
+        #Input2{
+            height: 40px;
+            font-size: 30px;
+            width: 300px;
+            color: blue;
+            border: none;
+        }
+
+        #label1{
+            font-size: 30px;
+        }
+
+        #label2{
+            font-size: 30px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #Name{
+            margin-top: 20px;
+            background-color: red;
+            font-size: 50px;
+            color: white;
+            width: 50px;
+            height: auto;
+            margin-left: 50px;
+            border: 2px solid black;
+        }
+
+        #Arrow2{
+            margin-top: 33px;
+        }
+
+        #Arrow3{
+            margin-top: 34px;
+        }
+
+        #Decription{
+            font-size: 25px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        .Formula{
+            font-size: 25px;
+            margin-top: 10px;
+            margin-left: 20px;
+            white-space: pre;
+        }
+
+        #straightline{
+            margin-top: 0%;
+        }
+
+        #DownsideFormula{
+            margin-left: 60px;
+        }
+
+        #Categories{
+            font-size: 25px;
+            margin-top: 10px;
+            margin-left: 40px;
+        }
+
+        table,th {
+            border: 5px solid black;
+            padding: 5px;
+        }
+
+        table{
+            border-spacing: 20px;
+        }
+
+        .TableData{
+            padding-left: 20px;
+        }
+
+        #Line{
+            background-color: black;
+            height: 5px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #Tableheader{
+            margin-top: 40px;
+            font-size: 30px;
+            font-family: cursive;
+            margin-bottom: 60px;
+            margin-left: 30px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="MainBox">
+    <div id="Part1">
+        <h1 id="Title"><u>BMI</u> <u>Calculator</u></h1>
+    </div>
+    <div id="hiddenContent" class="hidden">
+        <div id="Part2">
+            <div id="Name">
+                <p>B<br><br>M<br><br>I</p>
+            </div>
+            <div class="Arrows">
+                <p id="Arrow1">&#x21D2</p>
+                <p id="Arrow2">&#x21D2</p>
+                <p id="Arrow3">&#x21D2</p>
+            </div>
+            <div class="Labels">
+                <p id="Text1">Body</p>
+                <p id="Text2">Mass</p>
+                <p id="Text3">Index</p>
+            </div>
+        </div>
+        <p id="Decription">Body mass index (BMI) is a value derived from the mass (weight) and height of a person. The BMI is defined as the body mass divided by the square of the body height, and is expressed in units of <u>kg/m<sup>2</sup></u>, resulting from mass in kilograms (kg) and height in metres (m).</p>
+        <br>
+        <p class="Formula">Formula to Calculate BMI is :        <b>Mass in kilograms (kg)</b></p>
+        <p class="Formula" id="straightline">                                                    ------------------------------</p>
+        <p class="Formula" id="DownsideFormula">                                                 <b>Height in metres (m)</b>        </p>
+
+        <h1 id="Tableheader">⚫ <u>Categories according to BMI : </u></h1>
+        <table id="Categories">
+            <tr>
+                <th>Category</th>
+                <th class="TableData">BMI (in kg/m<sup>2</sup>)</th>
+            </tr>
+            <tr>
+                <td>UnderWeight (Severe Thinness)</td>
+                <td class="TableData">< 16.0</td>
+            </tr>
+            <tr>
+                <td>UnderWeight (Moderate Thinness)</td>
+                <td class="TableData">16.0 - 16.9</td>
+            </tr>
+            <tr>
+                <td>UnderWeight (Mid Thinness)</td>
+                <td class="TableData">17.0 - 18.4</td>
+            </tr>
+            <tr>
+                <td>Normal Range</td>
+                <td class="TableData">18.5 - 24.9</td>
+            </tr>
+            <tr>
+                <td>OverWeight (Pre Obese)</td>
+                <td class="TableData">25.0 - 29.9</td>
+            </tr>
+            <tr>
+                <td>Obses Class 1</td>
+                <td class="TableData">30.0 - 34.9</td>
+            </tr>
+            <tr>
+                <td>Obese Class 2</td>
+                <td class="TableData">35.0 - 39.9</td>
+            </tr>
+            <tr>
+                <td>Obses Class 3</td>
+                <td class="TableData"> >= 40</td>
+            </tr>
+        </table>
+        <hr id="Line">
+    </div>
+    <div id="EmptyDiv"></div>
+    <form action="/result" method="post">
+        <div id="Part3">
+            <div class="input-container">
+                <label id="label1">Enter the Weight: </label>
+                <input type="text" placeholder="Weight (in Kgs)" name="weight" required id="Input1">
+                <div>
+                    <img src="\static\images\Person Weighing Weight.jpg" alt="A Person is Weighing the Weight" class="input-image">
+                </div>
+            </div>
+            <div class="input-container">
+                <label id="label2">Enter the Height: </label>
+                <input type="text" placeholder="Height (in Mtr)" name="height" required id="Input2">
+                <img src="\static\images\Person Measuring Height.jpg" alt="A Person Measuring his Height" class="input-image">
+            </div>
+        </div>
+        <div id="Part4">
+            <center>
+                <button id="Calculate" type="submit">Calculate</button>
+            </center>
+        </div>
+    </form>
+
+<script>
+    document.getElementById('Title').addEventListener('click', function() {
+        var hiddenContent = document.getElementById('hiddenContent');
+        if (hiddenContent.classList.contains('hidden')) {
+            hiddenContent.classList.remove('hidden');
+        } else {
+            hiddenContent.classList.add('hidden');
+        }
+    });
+</script>
+    
+</div>
+</body>
+</html>
